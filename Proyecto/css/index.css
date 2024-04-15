@@ -1,0 +1,95 @@
+#banner{
+    background-image: url(/frutas.jpeg); 
+    background-attachment: fixed; 
+    background-repeat: no-repeat; 
+    background-size: 100% 100%; 
+    height: 9em;
+}
+body{
+    font-family: "Dosis", sans-serif;
+    font-weight: 400;
+    font-size: large;
+    background-color: #a3eb00;
+    background-image: linear-gradient(90deg, #D1F57F 0%, #687A3F 100% );
+}
+.nav-container{
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display:flex;
+  justify-content: space-between;
+}
+.nav-container nav{
+  background-color:  rgba(245, 98, 75, 0.8);
+  margin: 0 auto;
+  height: 80px;
+  padding: 4px 48px;
+  box-shadow: 0px 4px 8px -4px rgba(0, 0, 0, 0.4);
+  border-radius: 0 0 20px 20px;
+  box-sizing: border-box;
+}
+.menu{
+  display: flex;
+  align-items: center;
+  height: 70px;
+}
+.menu > a{
+  color: aliceblue;
+  margin: 0 24px;
+  text-decoration: none;
+  position: relative;
+}
+.nav-container .social{
+  background-color: ghostwhite;
+  padding: 4px 16px;
+  border-radius: 20px;
+}
+.nav-container .social img{
+  vertical-align: middle;
+  transition: all 500ms;
+  height: 25px;
+}
+.nav-container .social a{
+  margin: 0 12px;
+  text-decoration: none;
+}
+.relleno{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 70%;
+  margin: 0 auto;
+  height: 80vh;
+}
+.texto{
+  background-color: #f5624b;
+  padding: 18px 32px;
+  margin: 24px 0;
+  border-radius: 20px;
+  width: 50%;
+}
+.texto p{
+  font-size: 1.25em;
+  color:aliceblue;
+}
+.relleno .imagen{
+  align-self: flex-end;
+}
+.relleno .imagen img{
+  position: absolute;
+  left: 48%;
+  bottom: 24%;
+  pointer-events: none;
+  border-radius: 20px;
+}
+.btn{
+  background-color: #f5624b;
+  border-radius: 18px;
+  padding: 12px 30px;
+  color: aliceblue;
+  margin-top: 8px;
+  text-decoration: none;
+
+}

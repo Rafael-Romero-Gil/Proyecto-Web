@@ -1,0 +1,17 @@
+{
+    "folders": [
+        {
+            "path": "."
+        },
+        {
+            "path": "../DESARROLLO WEB ENTORNO CLIENTE/practicas cliente"
+        },
+        {
+            "path": "../DISEÑO DE INTERFAZ WEB/practicas interfaz web"
+        }
+    ],
+    "settings": {
+        "liveServer.settings.multiRootWorkspaceName": "Proyecto",
+        "git.ignoreLimitWarning": true
+    }
+}
