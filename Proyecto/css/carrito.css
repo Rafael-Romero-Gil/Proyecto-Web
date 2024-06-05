@@ -1,0 +1,116 @@
+#banner{
+    background-image: url(../imagenes/frutas.jpeg); 
+    background-attachment: fixed; 
+    background-repeat: no-repeat; 
+    background-size: 100% 100%; 
+    height: 9em;
+}
+body{
+    font-family: "Dosis", sans-serif;
+    font-weight: 400;
+    font-size: large;
+    background-color: #a3eb00;
+    background-image: linear-gradient(90deg, #D1F57F 0%, #687A3F 100% );
+}
+.nav-container{
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display:flex;
+  justify-content: space-between;
+}
+.nav-container nav{
+  background-color:  rgba(245, 98, 75, 0.8);
+  margin: 0 auto;
+  height: 80px;
+  padding: 4px 48px;
+  box-shadow: 0px 4px 8px -4px rgba(0, 0, 0, 0.4);
+  border-radius: 0 0 20px 20px;
+  box-sizing: border-box;
+}
+.menu{
+  display: flex;
+  align-items: center;
+  height: 70px;
+}
+.menu > a{
+  color: aliceblue;
+  margin: 0 24px;
+  text-decoration: none;
+  position: relative;
+}
+.nav-container .social{
+  background-color: ghostwhite;
+  padding: 4px 16px;
+  border-radius: 20px;
+}
+.nav-container .social img{
+  vertical-align: middle;
+  transition: all 500ms;
+  height: 25px;
+}
+.nav-container .social a{
+  margin: 0 12px;
+  text-decoration: none;
+}
+.carrito{
+    background-color: rgb(230, 230, 230);
+    z-index: 1;
+    place-self: center;
+    border-radius: 5px;
+    max-height: max-content;
+    width: 35%;
+    -webkit-box-shadow: 6px 9px 32px 18px rgba(0,0,0,0.75);
+    -moz-box-shadow: 6px 9px 32px 18px rgba(0,0,0,0.75);
+    box-shadow: 6px 9px 32px 18px rgba(0,0,0,0.75);}
+.carritoInner {
+    max-height: max-content;
+    display: flex;
+    justify-content: center;
+}
+.carritoVacio {
+    display: flex;
+}
+.product-cart {
+    font-family: "Dosis", sans-serif;
+    font-weight: 400;
+    font-size: large;
+    display: flex;
+    align-items: center;
+    width: 300px;
+    height: 200px;
+    padding: 10px;
+    background-color: #ffea80;
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.cart-img {
+    width: 150px;
+    height: 150px;
+}
+.content-cart {
+    padding: 5px;
+    text-align: center;
+    align-content: center;
+}
+.content-cart p {
+    margin: 3px;
+}
+.cantidad {
+    top: 11px;
+    left: 14px;
+    background-color: #f5624b;
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 10px;
+}
+.cambiarCantidad button {
+    padding: 0px 7px;
+}
+.checkout {
+    margin: 12px;
+    text-align: center;
+}

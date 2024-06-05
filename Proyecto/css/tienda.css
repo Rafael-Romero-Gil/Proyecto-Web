@@ -1,5 +1,5 @@
 #banner{
-    background-image: url(/frutas.jpeg); 
+    background-image: url(../imagenes/frutas.jpeg); 
     background-attachment: fixed; 
     background-repeat: no-repeat; 
     background-size: 100% 100%; 
@@ -20,6 +20,7 @@ body{
   right: 0;
   display:flex;
   justify-content: space-between;
+  z-index: 1;
 }
 .nav-container nav{
   background-color:  rgba(245, 98, 75, 0.8);
@@ -67,7 +68,6 @@ body{
   margin: 24px 10px;
   border-radius: 20px;
   width: 15%;
-
 }
 .tipos{
   color: white;
@@ -97,12 +97,17 @@ body{
 }
 .orden{
   margin-left: 3em;
-  
 }
 .bdesple{
   background-color: #4c6b06;
   border-radius: 5px;
   width: 8em;
+  border: none;
+}
+.bcarrito{
+  background-color: #4c6b06;
+  border-radius: 5px;
+  width: 4em;
   border: none;
 }
 #demo0{
@@ -126,6 +131,98 @@ body{
 .product-container{
   display: inline-block;
   width: 12em;
-  margin: 1.5em;
+  margin: 1.5em 1.8em;
   text-align: center;
+  background-color: #ffea80;
+  border-radius: 5px;
+  padding: 10px;
 }
+.card-number{
+  width: 40%;
+}
+.card-img{
+  width: 180px;
+  height: 200px;
+  margin: 3px;
+}
+.filter{
+  margin: 5px;
+}
+#buscar{
+  outline: none;
+}
+.alertCompra{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  background-color: rgb(230, 230, 230);
+  height: 300px;
+  width: 400px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  flex-direction: column;
+  -webkit-box-shadow: 6px 9px 32px 18px rgba(0,0,0,0.75);
+  -moz-box-shadow: 6px 9px 32px 18px rgba(0,0,0,0.75);
+  box-shadow: 6px 9px 32px 18px rgba(0,0,0,0.75);
+}
+.product-cart {
+  font-family: "Dosis", sans-serif;
+  font-weight: 400;
+  font-size: large;
+  display: flex;
+  align-items: center;
+  width: 300px;
+  height: 200px;
+  padding: 10px;
+  background-color: #ffea80;
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.cart-img {
+  width: 150px;
+  height: 150px;
+
+}
+.content-cart {
+  padding: 5px;
+  text-align: center;
+  align-content: center;
+}
+.content-cart p {
+  margin: 3px;
+}
+.cantidad {
+  top: 11px;
+  left: 14px;
+  background-color: #f5624b;
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 10px;
+}
+.listaCompra{
+  z-index: 1;
+  position: absolute;
+  left: 79%;
+  max-width: max-content;
+  background-color: rgb(230, 230, 230);
+  border-radius: 5px;
+  padding: 3px;
+  display: none;
+}
+.product-viewCesta{
+  max-height: min-content;
+  background-color: #ffea80;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 1px;
+  padding-bottom: 2px;
+}
+.viewCesta{
+  text-align: left;
+  vertical-align: middle;
+}
+

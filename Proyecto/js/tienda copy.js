@@ -91,33 +91,6 @@ async function loadProductos(products) {
     document.getElementsByClassName("products")[0].innerHTML = html;
 };
 
-async function ordenarTemporada(){
-    window.location.reload();
-        productos.sort(function (a,b){
-            if(a.temporada>b.temporada){
-                return 1;
-            }if(a.temporada<b.temporada){
-                return-1;
-            }else{
-                return 0;
-            }
-        })
-        loadProductos(productos);
-    }
-
-
-async function ordenarPrecio(){
-    productos.sort(function (a,b){
-        if(a.precio>b.precio){
-            return 1;
-        }if(a.precio<b.precio){
-            return-1;
-        }else{
-            return 0;
-        }
-    })
-    loadProductos(productos);
-}
 let listaIds = [0];
 var listaCarrito = [];
 
@@ -322,31 +295,25 @@ const searchInput = document.getElementById("buscar");
 var filtroBusqueda = [];
 function busqueda() {
     const search = searchInput.value.toLowerCase();
-    if(filtrosActivos.length>0){
-        filtroActivoBusqueda=true;
+    if(filtrosActivos>0){
         filtroBusqueda = filtroTipo.filter((product) => product.name.toLowerCase().includes(search));
         loadProductos(filtroBusqueda);
     }else{
-        if(search===""){
-            filtroActivoBusqueda=false;
-            loadProductos(productos);
-        }else{
         filtroActivoBusqueda = true;
         filtroBusqueda = productos.filter((product) => product.name.toLowerCase().includes(search));
         loadProductos(filtroBusqueda);
-    }
     }
 };
 
 
 let filtroActivoBusqueda = false;
-let filtrosActivos = [];
+let filtrosActivos = 0;
 let filtroTipo=[];
 function filtro(checkbox) {
     if(filtroActivoBusqueda===true){
         if(checkbox.checked){
-            if(filtrosActivos.length<1){
-                filtrosActivos.push(checkbox.name);
+            if(filtrosActivos<1){
+                filtrosActivos++;
                 var temporal =[];
                 filtroBusqueda.forEach(element => {
                     if(checkbox.name===element.tipo){
@@ -359,7 +326,7 @@ function filtro(checkbox) {
                 });
                 filtroTipo = temporal;
             }else{
-                filtrosActivos.push(checkbox.name);
+                filtrosActivos++;
                 var temporal =[];
                 filtroBusqueda.forEach(element => {
                     if(checkbox.name===element.tipo){
@@ -370,45 +337,34 @@ function filtro(checkbox) {
                         temporal.push(element);
                     }
                 });
-                filtroTipo=temporal;
+                temporal.forEach(element => {
+                    filtroTipo.push(element);
+                });
             };
             loadProductos(filtroTipo);
         }else if(!checkbox.checked){
-            for (let x = 0; x < filtrosActivos.length; x++) {
-                if(filtrosActivos[x]==checkbox.name){
-                    filtrosActivos.splice(x);
-                }              
-            };
-            if(filtrosActivos.length<1){
-                busqueda();
+            filtrosActivos--;
+            if(filtrosActivos<1){
+                loadProductos(filtroBusqueda);
             }else{
                 var temporal =[];
-                productos.forEach(element => {
-                    filtrosActivos.forEach(filtro => {
-                        if(filtro===element.tipo){
-                            temporal.push(element);
-                        }else if(filtro===element.temporada){
-                            temporal.push(element);
-                        }else if(filtro===element.familia){
-                            temporal.push(element);
-                        }
-                    });                   
-                });
-                var hash = {};
-                temporal = temporal.filter(function(current) {
-                    var exists = !hash[current.id];
-                    hash[current.id] = true;
-                    return exists;
+                filtroTipo.forEach(element => {
+                    if(checkbox.name===element.tipo){
+                        temporal.push(element);
+                    }else if(checkbox.name===element.temporada){
+                        temporal.push(element);
+                    }else if(checkbox.name===element.familia){
+                        temporal.push(element);
+                    }
                 });
                 filtroTipo = temporal;
-                busqueda();
-                
+                loadProductos(filtroTipo);
             };
         };
     }else{
         if(checkbox.checked){
-            if(filtrosActivos.length<1){
-                filtrosActivos.push(checkbox.name);
+            if(filtrosActivos<1){
+                filtrosActivos++;
                 var temporal =[];
                 productos.forEach(element => {
                     if(checkbox.name===element.tipo){
@@ -421,7 +377,7 @@ function filtro(checkbox) {
                 });
                 filtroTipo = temporal;
             }else{
-                filtrosActivos.push(checkbox.name);
+                filtrosActivos++;
                 var temporal =[];
                 filtroTipo.forEach(element => {
                     if(checkbox.name===element.tipo){
@@ -436,25 +392,19 @@ function filtro(checkbox) {
             };
             loadProductos(filtroTipo);
         }else if(!checkbox.checked){
-            for (let x = 0; x < filtrosActivos.length; x++) {
-                if(filtrosActivos[x]==checkbox.name){
-                    filtrosActivos.splice(x);
-                }              
-            };
-            if(filtrosActivos.length<1){
+            filtrosActivos--;
+            if(filtrosActivos<1){
                 loadProductos(productos);
             }else{
                 var temporal =[];
-                productos.forEach(element => {
-                    filtrosActivos.forEach(filtro => {
-                        if(filtro===element.tipo){
-                            temporal.push(element);
-                        }else if(filtro===element.temporada){
-                            temporal.push(element);
-                        }else if(filtro===element.familia){
-                            temporal.push(element);
-                        }
-                    });                   
+                filtroTipo.forEach(element => {
+                    if(checkbox.name===element.tipo){
+                        temporal.push(element);
+                    }else if(checkbox.name===element.temporada){
+                        temporal.push(element);
+                    }else if(checkbox.name===element.familia){
+                        temporal.push(element);
+                    }
                 });
                 filtroTipo = temporal;
                 loadProductos(filtroTipo);

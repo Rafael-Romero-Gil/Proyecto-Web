@@ -9,7 +9,7 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <link rel="stylesheet" href="css/tienda.css" type="text/css">
+  <link rel="stylesheet" href="css/carrito.css" type="text/css">
 
 </head>
 
@@ -34,45 +34,17 @@
       </nav>
     </div>
   </header>
-  <div class="container">
-    <div class="baseBuscador">
-      <div class="buscador">
-          <input type="text" placeholder="Buscar" id="buscar">
-      </div>
-      <div class="orden">
-        <button class="bdesple"><a href="#demo0" class="tipos" data-bs-toggle="collapse">Ordenar &#8595;</a></button>
-        <div id="demo0" class="collapse">
-          <button onClick=(ordenarTemporada())>Temporada</button>
-          <button onClick=(ordenarFamilia())>Familia</button>
-          <button onClick=(ordenarPrecio())>Precio</button>
+<div class="d-grid">
+    <div class="carrito m-3" id="cCarrito">
+        <div class="carritoInner">
+            <div class="carritoVacio" id="carritoVacio">
+                Sin articulos en cesta
+            </div>
+            <div class="productsCarrito"></div>
         </div>
-      </div>
-      <div class="orden">
-        <button class="bcarrito" id="bCarrito" onclick="location.href='carrito.html';"><a class="tipos">&#x1f6d2;</a></button>
-      </div>
     </div>
-    <div class="listaCompra" id="listaCompra"></div> 
-  </div>
-  <div class="relleno">
-    <div class="filtros">
-      <div class="container">
-        <h4>Filtros</h4>
-          <div class="filter-container">
-          </div>     
-      </div>     
-    </div>  
-    <div class="container">
-      <div class="contenido">
-          <div class="products">
-          </div>
-      </div>
-    </div>  
-  </div>
-  <div class="container">
-    <div class="alertCompra" id="alertaC">
-    </div>
-  </div>
-  <script src="./js/tienda.js"></script> 
+</div>
+  <script src="./js/carrito.js"></script> 
 </body>
 <footer class="m-3 border-top border-dark">
   <div class="container">
