@@ -1,103 +1,79 @@
-#banner{
-    background-image: url(/frutas.jpeg); 
-    background-attachment: fixed; 
-    background-repeat: no-repeat; 
-    background-size: 100% 100%; 
-    height: 9em;
-}
-body{
+body {
     font-family: "Dosis", sans-serif;
-    font-weight: 400;
-    font-size: large;
+    margin: 0;
     background-color: #a3eb00;
-    background-image: linear-gradient(90deg, #D1F57F 0%, #687A3F 100% );
+    background-image: linear-gradient(90deg, #D1F57F 0%, #687A3F 100%);
 }
-.nav-container{
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  display:flex;
-  justify-content: space-between;
+.container {
+    max-width: 100%;
+    background-color: #a3eb00;
+    background-image: linear-gradient(90deg, #D1F57F 0%, #687A3F 100%);
+    margin: 0 auto;
+    padding: 0 15px;
 }
-.nav-container nav{
-  background-color:  rgba(245, 98, 75, 0.8);
-  margin: 0 auto;
-  height: 80px;
-  padding: 4px 48px;
-  box-shadow: 0px 4px 8px -4px rgba(0, 0, 0, 0.4);
-  border-radius: 0 0 20px 20px;
-  box-sizing: border-box;
+.nav-container {
+    width: 100%;
+    background-color: rgba(245, 98, 75,1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0;
+    z-index: 1000;
+    box-shadow: 0px 4px 8px -4px rgba(0, 0, 0, 0.4);
 }
-.menu{
-  display: flex;
-  align-items: center;
-  height: 70px;
+.nav-content {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
 }
-.menu > a{
-  color: aliceblue;
-  margin: 0 24px;
-  text-decoration: none;
-  position: relative;
+.nav-logo {
+    font-size: 2em;
+    color: white;
+    text-decoration: none;
 }
-.nav-container .social{
-  background-color: ghostwhite;
-  padding: 4px 16px;
-  border-radius: 20px;
+.nav-menu {
+    display: flex;
+    align-items: center;
 }
-.nav-container .social img{
-  vertical-align: middle;
-  transition: all 500ms;
-  height: 25px;
+.nav-menu a {
+    color: aliceblue;
+    margin: 0 20px;
+    text-decoration: none;
+    font-size: 1.4em;
+    font-weight: 600;
+    transition: color 0.3s ease;
 }
-.nav-container .social a{
-  margin: 0 12px;
-  text-decoration: none;
+.nav-menu a:hover {
+    color: #ffd700; /* Color hacer hover */
 }
-.relleno{
-  display: flex;
-  justify-content: space-between;
-  max-width: 100%;
-  margin: 0 auto;
-}
-.filtros{
-  background-color: #f5624b;
-  padding: 18px 32px;
-  margin: 24px 10px;
-  border-radius: 20px;
-  width: 15%;
 
-}
-.tipos{
-  color: white;
-  text-decoration: none;
-}
+
 .baseBuscador{
   background-color: #f5624b;
-  width: 120%;
-  height: 3,5em;
+  height: 4.5em;
   display: flex;
   border-radius: 20px;
-  padding: 15px;
-  margin-top: 1em;  
 }
 .buscador{
   background-color: #f5624b;
   border-radius: 20px;
   margin-left: 2%;
+  width: 100%;
 }
 .buscar{
   border: 0;
-  margin-left: -2em;
-}
-#buscar{
-  border: 0;
-  width: 50em;
+  width: 100%;
 }
 .orden{
-  margin-left: 3em;
-  
+z-index: 1;
+margin-top: 5px;
 }
 .bdesple{
   background-color: #4c6b06;
@@ -105,27 +81,199 @@ body{
   width: 8em;
   border: none;
 }
+.bcarrito{
+  background-color: #4c6b06;
+  border-radius: 5px;
+  width: 4em;
+  border: none;
+}
 #demo0{
   text-align: center;
   background-color: aliceblue;
-  width: 6em;
+  width: 8.5em;
 }
-#demo0 a{
+.ord{
+    width: 7em;
+}
+.tipos{
+  color: white;
   text-decoration: none;
-  color: black;
+}
+.filtros{
+  background-color: #f5624b;
+  padding: 1em 3em;
+  margin: 1em 1em;
+  border-radius: 20px;
+  max-width: 15em;
+  min-height: fit-content;
+}
+.relleno{
+  display: flex;
+  justify-content: space-between;
+  max-width: 100%;
+  margin: 0 auto;
 }
 .contenido{
   background-color: #f5624b;
   border-radius: 20px;
-  margin-top: 1.35em;
-  margin-left: -12%;
-  width: 120%;
+  margin-top: 1em;
+  width: 100%;
   min-height: fit-content;
-  padding: 3em;
+
 }
 .product-container{
   display: inline-block;
-  width: 12em;
-  margin: 1.5em;
+  width: 13em;
+  margin: 1.5em 1.5em;
   text-align: center;
+  background-color: #ffea80;
+  border-radius: 5px;
+  padding: 10px;
+}
+.card-number{
+  width: 40%;
+}
+.card-img{
+  width: 80%;
+  height: 10em;
+  margin: 1em;
+}
+.filter{
+  margin: 5px;
+}
+.alertCompra{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  background-color: rgb(230, 230, 230);
+  height: 300px;
+  width: 400px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  flex-direction: column;
+  -webkit-box-shadow: 6px 9px 32px 18px rgba(0,0,0,0.75);
+  -moz-box-shadow: 6px 9px 32px 18px rgba(0,0,0,0.75);
+  box-shadow: 6px 9px 32px 18px rgba(0,0,0,0.75);
+}
+.product-cart {
+  font-family: "Dosis", sans-serif;
+  font-weight: 400;
+  font-size: large;
+  display: flex;
+  align-items: center;
+  width: 300px;
+  height: 200px;
+  padding: 10px;
+  background-color: #ffea80;
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.cart-img {
+  width: 150px;
+  height: 150px;
+
+}
+.content-cart {
+  padding: 5px;
+  text-align: center;
+  align-content: center;
+}
+.content-cart p {
+  margin: 3px;
+}
+.cantidad {
+  top: 11px;
+  left: 14px;
+  background-color: #f5624b;
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 10px;
+}
+.listaCompra{
+  z-index: 1;
+  position: absolute;
+  margin-top: -3.3%;
+  margin-left: 75%;
+  max-width: max-content;
+  background-color: rgb(230, 230, 230);
+  border-radius: 5px;
+  padding: 3px;
+  display: none;
+}
+.product-viewCesta{
+  max-height: min-content;
+  background-color: #ffea80;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 1px;
+  padding-bottom: 2px;
+}
+.viewCesta{
+  text-align: left;
+  vertical-align: middle;
+}
+
+
+
+
+.burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+.burger div {
+    width: 30px;
+    height: 4px;
+    background-color: white;
+    margin: 5px;
+    transition: background-color 0.3s ease;
+}
+.burger:hover div {
+    background-color: #ffd700; /* Color dorado al hacer hover */
+}
+@media (max-width: 768px) {
+    .nav-container {
+        padding: 15px 20px;
+    }
+    .nav-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .nav-menu{
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        align-items: flex-start;
+    }
+    .burger {
+        display: flex;
+        position: absolute;
+        right: 20px;
+        top: 15px;
+    }
+    .nav-container.active .nav-menu,
+    .nav-container.active {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+    .nav-menu a {
+        width: 100%;
+        padding: 15px 0; /* Aumentar el margen entre los elementos */
+        text-align: left;
+        background-color: white;
+        color:black;
+        margin: 0 !important;
+        text-align: center
+
+    }
+    .nav-social img {
+        margin: 15px 20px;
+    }
+    
+   
 }
